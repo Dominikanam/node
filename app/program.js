@@ -1,7 +1,7 @@
+var OSinfo = require('../modules/OSinfo');
+
 process.stdin.setEncoding('utf-8');
-
 process.stdout.write('Test: ');
-
 process.stdin.on('readable', function() {
     var input = process.stdin.read();
     if (input !== null) {
@@ -17,6 +17,9 @@ process.stdin.on('readable', function() {
 				break;
 			case '/node':
 				process.stdout.write(process.versions.node);
+				break;
+			case '/getOSinfo':
+				OSinfo.print();
 				break;
 			default:
 				process.stderr.write('Wrong instruction!');
