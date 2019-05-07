@@ -31,7 +31,7 @@ server.on('request', function requestCallback(request, response) {
 		}
 	} else {
 		response.statusCode = 405;
-		response.end;
+		response.end();
     }
 });
 
